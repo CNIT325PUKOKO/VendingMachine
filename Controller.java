@@ -2,8 +2,8 @@
 /**
  * Write a description of class Controller here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author kintzel
+ * @version 9-28-21
  */
 import javax.swing.*;
 //import Machines.*;
