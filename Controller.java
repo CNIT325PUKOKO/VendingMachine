@@ -1,69 +1,95 @@
 
 /**
- * Write a description of class Controller here.
+ * Controller handles the interaction between the different modules
  *
  * @author kintzel
- * @version 9-28-21
+ * @version 3.0
  */
 import javax.swing.*;
-//import Machines.*;
 public class Controller
 {
     Machinable machine;
     GUIable gui;
+    Dispense dispenser;
+    boolean machineStatus;
+    
+    /**
+     * Constructor for objects of class Controller
+     */
     public Controller()
     {
-        machine = new Machine(3,2,2,1);
-        execute();
-        //gui = new GUI(this);
-        
+        try
+        {
+            createMachine();
+            machineStatus = true;
+        }
+        catch(Exception e)
+        {
+            machineStatus = false;
+        }
+        dispenser = new Dispense();
     }
     
+    /**
+     * Sends the code to machine and gets the price for the product in that slot
+     *
+     * @param  String for the code
+     * @return   double
+     */
     public double sendSelectionToMachine(String code)
     {
         return machine.getPrice(code);
-        //return 1.50;
     }
 
-    public String sendCashAmountToMachine(String codey, String cashy)
+    /**
+     * Sends the code and amount paid to machine and returns the result of comparing the price
+     *
+     * @param  String for the code, String for the cash paid
+     * @return   String
+     */
+    public String sendCashAmountToMachine(String code, String cash)
     {
-        return machine.comparePrice(codey,cashy);
+        return machine.comparePrice(code, cash);
     }
     
- public void execute()
+    
+    /**
+     * Creates the machine
+     *
+     * @param  no parameters
+     * @return   void
+     */
+    public void createMachine()
     {
-        Machine vend = (Machine)machine;
-        String[] names = new String[8];
-        names[0] = "Gum";
-        names[1] = "Pop-Tarts";
-        names[2] = "Air Heads";
-        names[3] = "M&Ms";
-        names[4] = "Jolly Ranchers";
-        names[5] = "Gummy Bears";
-        names[6] = "Sour Gummy Worms";
-        names[7] = "Reese's Cups";
-        Size[] sizes = new Size[8];
-        sizes[0] = Size.SMALL;
-        sizes[1] = Size.BIG;
-        sizes[2] = Size.SMALL;
-        sizes[3] = Size.SMALL;
-        sizes[4] = Size.MEDIUM;
-        sizes[5] = Size.MEDIUM;
-        sizes[6] = Size.MEDIUM;
-        sizes[7] = Size.MEDIUM;
-        double[] prices = new double[8];
-        prices[0] = 0.5;
-        prices[1] = 2;
-        prices[2] = 0.5;
-        prices[3] = 0.5;
-        prices[4] = 1;
-        prices[5] = 1;
-        prices[6] = 1;
-        prices[7] = 1;
-        vend.populateProducts(names, sizes, prices);
-        vend.printMachine();
-        System.out.println(vend.getPrice("A1"));
-        System.out.println(vend.comparePrice("A1", "1"));
+        machine = new Machine(10,4,10,10);
+        String[] names = {"AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "CA", "CB", "CC", "CD", "CE", "CF", "CG", "CH", "CI", "CJ", "DA", "DB", "DC", "DD", "DE", "DF", "DG", "DH", "DI", "DJ", "EA", "EB", "EC", "ED", "EE", "EF", "EG", "EH", "EI", "EJ", "FA", "FB", "FC", "FD", "FE", "FF", "FG", "FH", "FI", "FJ"};
+        Size[] sizes = {Size.SMALL, Size.SMALL, Size.SMALL, Size.SMALL, Size.SMALL, Size.SMALL, Size.SMALL, Size.SMALL, Size.SMALL, Size.SMALL, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.MEDIUM, Size.BIG, Size.BIG, Size.BIG, Size.BIG, Size.BIG, Size.BIG, Size.BIG, Size.BIG, Size.BIG, Size.BIG}; 
+        double[] prices = {0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.25, 0.75, 0.5, 0.5, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 0.75, 1, 1, 1, 1, 1, 1, 1, 1.25, 1, 1, 1, 1, 1, 1, 1, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1.75, 2, 2, 2, 1.5, 2};
+        machine.populateProducts(names, sizes, prices);
+    }
+    
+    /**
+     * Sends the slot number to the dispenser to dispense it
+     *
+     * @param  String for the slot number
+     * @return   void
+     */
+    public void dispenseItem(String slotNum)
+    {
+        dispenser.dispenseProd(slotNum);
+    } 
+    
+    /**
+     * Sends the machine status to the GUI
+     *
+     * @param  no parameters
+     * @return   boolean
+     */
+    public boolean getMachineStatus()
+    {
+        return machineStatus;
     }
 }   
+
+
 
