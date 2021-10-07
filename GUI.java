@@ -58,7 +58,7 @@ public class GUI implements ActionListener,GUIable {
         this.control = control;
         machineStatus = control.getMachineStatus();
         
-        frame = new JFrame("Where da frame?");
+        frame = new JFrame("Kintzel's Vending Machine");
         frame.setSize(500,500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
