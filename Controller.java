@@ -2,7 +2,7 @@
 /**
  * Controller handles the interaction between the different modules
  *
- * @author kintzel
+ * @author Kintzel, Kayla
  * @version 3.0
  */
 import javax.swing.*;
