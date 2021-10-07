@@ -20,11 +20,11 @@ public class Controller
         try
         {
             createMachine();
-            machineStatus = true;
         }
         catch(Exception e)
         {
-            machineStatus = false;
+            System.out.println("Machine creation failed!!");
+            System.exit(0);
         }
         dispenser = new Dispense();
     }
