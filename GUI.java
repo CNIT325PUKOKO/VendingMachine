@@ -438,7 +438,7 @@ public class GUI implements ActionListener,GUIable {
                 change = control.sendCashAmountToMachine(codeLabel.getText(), moneyLabel.getText());
 
                 //System.out.println("Sent: " + codeLabel.getText()
-                        + ":" + moneyLabel.getText());
+                //        + ":" + moneyLabel.getText());
                 //need to deal with response
                 priceLabel.setText("VendingProduct...change amount: " + change);
                 moneyLabel.setText(change);
