@@ -1,14 +1,14 @@
 
 /**
- * Write a description of class Driver here.
+ * Driver starts the program execution
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Jack, Michael
+ * @version 2.0
  */
 import javax.swing.*;
 public class Driver
 {
-    public static void main(String[] args)
+    public static void main(String[] args) //throws Exception
     {
         Controller control = new Controller();
         SwingUtilities.invokeLater

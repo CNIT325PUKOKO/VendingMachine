@@ -1,8 +1,8 @@
 /**
- * Write a description of class Product here.
+ * A product is an item in the machine and has a price, name and size.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Adam, Kayla, Zephyn
+ * @version 2.0
  */
 public class Product
 {
@@ -47,7 +47,7 @@ public class Product
      * Set the price of the product
      *
      * @param  p the amount to set the price as
-     * @return   String
+     * @return   double
      */
     public double setPrice(double p)
     {
