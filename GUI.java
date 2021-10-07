@@ -56,7 +56,6 @@ public class GUI implements ActionListener,GUIable {
      */
     public GUI(Controller control) {
         this.control = control;
-        machineStatus = control.getMachineStatus();
         
         frame = new JFrame("Kintzel's Vending Machine");
         frame.setSize(500,500);
@@ -65,11 +64,6 @@ public class GUI implements ActionListener,GUIable {
         setupUI();
         frame.add(mainPanel);
         frame.setVisible(true);
-        if(machineStatus == false)
-        {
-            System.out.println("Machine creation failed!!");
-            System.exit(0);
-        }
     }
 
     /**
