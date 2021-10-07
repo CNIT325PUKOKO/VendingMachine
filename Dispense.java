@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Dispense here.
+ * Dispense is a placeholder for the module that would dispense the product.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Kayla
+ * @version 1.0
  */
 public class Dispense
 {
@@ -16,10 +16,10 @@ public class Dispense
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Prints that a product is being dispensed
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param  String the slot number of the product
+     * @return    void
      */
     public void dispenseProd(String slotNum)
     {
