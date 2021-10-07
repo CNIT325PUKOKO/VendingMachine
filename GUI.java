@@ -327,96 +327,96 @@ public class GUI implements ActionListener,GUIable {
         double tempCash = 0.0;
         if (e.getActionCommand().equals("A")) {
             temp = buttonA.getText();
-            System.out.println("Button A was pressed");
+            //System.out.println("Button A was pressed");
             codeLabel.setText("A");
             letter = "A";
         } else if (e.getActionCommand().equals("B")) {
             temp = buttonB.getText();
-            System.out.println("Button B was pressed");
+            //System.out.println("Button B was pressed");
             codeLabel.setText("B");
             letter = "B";
         } else if (e.getActionCommand().equals("C")) {
             temp = buttonC.getText();
-            System.out.println("Button C was pressed");
+            //System.out.println("Button C was pressed");
             codeLabel.setText("C");
             letter = "C";
         } else if (e.getActionCommand().equals("D")) {
             temp = buttonD.getText();
-            System.out.println("Button D was pressed");
+            //System.out.println("Button D was pressed");
             codeLabel.setText("D");
             letter = "D";
         } else if (e.getActionCommand().equals("E")) {
             temp = buttonE.getText();
-            System.out.println("Button E was pressed");
+            //System.out.println("Button E was pressed");
             codeLabel.setText("E");
             letter = "E";
         } else if (e.getActionCommand().equals("F")) {
             temp = buttonF.getText();
-            System.out.println("Button F was pressed");
+            //System.out.println("Button F was pressed");
             codeLabel.setText("F");
             letter = "F";
         } else if (e.getActionCommand().equals("0")) {
             temp1 = button0.getText();
-            System.out.println("Button 0 was pressed");
+            //System.out.println("Button 0 was pressed");
             codeLabel.setText(letter + "0");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("1")) {
             temp1 = button1.getText();
-            System.out.println("Button 1 was pressed");
+            //System.out.println("Button 1 was pressed");
             codeLabel.setText(letter + "1");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("2")) {
             temp1 = button2.getText();
-            System.out.println("Button 2 was pressed");
+            //System.out.println("Button 2 was pressed");
             codeLabel.setText(letter + "2");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("3")) {
             temp1 = button3.getText();
-            System.out.println("Button 3 was pressed");
+            //System.out.println("Button 3 was pressed");
             codeLabel.setText(letter + "3");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("4")) {
             temp1 = button4.getText();
-            System.out.println("Button 4 was pressed");
+            //System.out.println("Button 4 was pressed");
             codeLabel.setText(letter + "4");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("5")) {
             temp1 = button5.getText();
-            System.out.println("Button 5 was pressed");
+            //System.out.println("Button 5 was pressed");
             codeLabel.setText(letter + "5");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("6")) {
             temp1 = button6.getText();
-            System.out.println("Button 6 was pressed");
+            //System.out.println("Button 6 was pressed");
             codeLabel.setText(letter + "6");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("7")) {
             temp1 = button7.getText();
-            System.out.println("Button 7 was pressed");
+            //System.out.println("Button 7 was pressed");
             codeLabel.setText(letter + "7");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("8")) {
             temp1 = button8.getText();
-            System.out.println("Button 8 was pressed");
+            //System.out.println("Button 8 was pressed");
             codeLabel.setText(letter + "8");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("9")) {
             temp1 = button9.getText();
-            System.out.println("Button 9 was pressed");
+            //System.out.println("Button 9 was pressed");
             codeLabel.setText(letter + "9");
             TriggerSendingPrice();
         } else if (e.getActionCommand().equals("Quarters")) {
             tempCash = .25;
-            System.out.println("Quarter button was pressed");
+            //System.out.println("Quarter button was pressed");
             money = money + .25;
             moneyLabel.setText(String.valueOf(money));
         }else if (e.getActionCommand().equals("Dollar")) {
             tempCash = 1.00;
-            System.out.println("Dollar button was pressed");
+            //System.out.println("Dollar button was pressed");
             money = money + 1.00;
             moneyLabel.setText(String.valueOf(money));
         }else if (e.getActionCommand().equals("Enter")) {
-            System.out.println("Enter button was pressed");
+            //System.out.println("Enter button was pressed");
             TriggerSendingCashAmount();
         }
     }
@@ -437,7 +437,7 @@ public class GUI implements ActionListener,GUIable {
             else {
                 change = control.sendCashAmountToMachine(codeLabel.getText(), moneyLabel.getText());
 
-                System.out.println("Sent: " + codeLabel.getText()
+                //System.out.println("Sent: " + codeLabel.getText()
                         + ":" + moneyLabel.getText());
                 //need to deal with response
                 priceLabel.setText("VendingProduct...change amount: " + change);
@@ -463,7 +463,7 @@ public class GUI implements ActionListener,GUIable {
     {
         //need to deal with response
         price = 0;
-        System.out.println(control.sendSelectionToMachine(getCurrentCode()));
+        //System.out.println(control.sendSelectionToMachine(getCurrentCode()));
         if(control.sendSelectionToMachine(getCurrentCode()) == -1)
         {
             // Display an error, selection does not exist or does not have a price
@@ -477,7 +477,7 @@ public class GUI implements ActionListener,GUIable {
         {
             price = control.sendSelectionToMachine(getCurrentCode());
             //get price from machine
-            System.out.println("Sent " + getCurrentCode() + " to machine.");
+            //System.out.println("Sent " + getCurrentCode() + " to machine.");
             //display price to user
             priceLabel.setText("Please Pay "+ price);
             //await money            
