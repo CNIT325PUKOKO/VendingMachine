@@ -115,7 +115,7 @@ public class Machine implements Machinable
         if(paid > price)
         {
             double change = paid - price;
-            System.out.println(change);
+            //System.out.println(change);
             if(change > 0.009)
             {
                 double roundChange = Math.round(change*100);
