@@ -5,7 +5,6 @@
  * @author Kintzel, Kayla
  * @version 3.0
  */
-import javax.swing.*;
 public class Controller
 {
     Machinable machine;
