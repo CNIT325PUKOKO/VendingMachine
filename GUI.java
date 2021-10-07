@@ -67,7 +67,8 @@ public class GUI implements ActionListener,GUIable {
         frame.setVisible(true);
         if(machineStatus == false)
         {
-            priceLabel.setText("Machine creation failed!!");
+            System.out.println("Machine creation failed!!");
+            System.exit(0);
         }
     }
 
